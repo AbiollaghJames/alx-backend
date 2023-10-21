@@ -9,6 +9,19 @@ import math
 from typing import List, Tuple
 
 
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """
+    The function should return a tuple of size
+    two containing a start index and an end index
+    corresponding to the range of indexes to return
+    in a list for those particular pagination parameters.
+    """
+    start_index = (page - 1) * page_size
+    end_index = start_index + page_size
+
+    return (start_index, end_index)
+
+
 class Server:
     """Server class to paginate a database of popular baby names.
     """
@@ -29,27 +42,15 @@ class Server:
 
         return self.__dataset
 
-    def index_range(page: int, page_size: int) -> Tuple[int, int]:
-        """
-        The function should return a tuple of size
-        two containing a start index and an end index
-        corresponding to the range of indexes to return
-        in a list for those particular pagination parameters.
-        """
-        start_index = (page - 1) * page_size
-        end_index = start_index + page_size
-
-        return (start_index, end_index)
-
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         assert isinstance(page, int) and assert isinstance(page_size, int)
         assert page > 0
         assert page_size > 0
 
-        self.dataset()
+        self.__dataset = self.dataset()
         idx = index_range(page, page_size)
 
         if idx[0] >= len(self.__dataset):
             return []
         else:
-            return self.__dataset[indx[0]:idx[1]]
+            return self.__dataset[idx[0]:idx[1]]
