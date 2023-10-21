@@ -47,7 +47,7 @@ class Server:
         assert page > 0
         assert page_size > 0
 
-        self.__dataset = self.dataset()
+        self.dataset()
         idx = index_range(page, page_size)
 
         if idx[0] >= len(self.__dataset):
