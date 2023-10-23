@@ -51,7 +51,7 @@ class Server:
         s, e = index_range(page, page_size)
         data_to_list = self.dataset()
 
-        if s > len(data_to_list):
+        if s >= len(data_to_list):
             return []
         else:
             return data_to_list[s:e]
