@@ -56,7 +56,7 @@ class Server:
             index = 0
         else:
             assert isinstance(index, int) and index >= 0
-        
+
         end = index + page_size
         if end > len(data):
             end = len(data)
