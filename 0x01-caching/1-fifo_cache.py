@@ -12,6 +12,7 @@ class FIFOCache(BaseCaching):
     BaseCaching and is a caching system
     """
     def __init__(self):
+        """constructor"""
         super().__init__()
         self.keys_in_cache = []
 
