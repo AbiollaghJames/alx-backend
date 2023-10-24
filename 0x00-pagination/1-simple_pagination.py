@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """
 Simple pagination
 """
@@ -42,8 +41,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        assert isinstance(page, int)
-        assert isinstance(page_size, int)
+        assert type(page) == int and type(page_size) == int
         assert page > 0
         assert page_size > 0
 
@@ -52,4 +50,5 @@ class Server:
 
         if s >= len(data_to_list):
             return []
-        return data_to_list[s:e]
+        else:
+            return data_to_list[s:e]
