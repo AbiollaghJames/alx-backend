@@ -52,5 +52,4 @@ class Server:
 
         if s >= len(data_to_list):
             return []
-        else:
-            return data_to_list[s:e]
+        return data_to_list[s:e]
