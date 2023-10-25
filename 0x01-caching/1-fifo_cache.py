@@ -12,7 +12,9 @@ class FIFOCache(BaseCaching):
     BaseCaching and is a caching system
     """
     def __init__(self):
-        """constructor"""
+        """
+        constructor
+        """
         super().__init__()
         self.keys_in_cache = []
 
@@ -28,7 +30,7 @@ class FIFOCache(BaseCaching):
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 key_to_discard = self.keys_in_cache.pop(0)
                 del self.cache_data[key_to_discard]
-                print(f"DISCARD: ", key_to_discard)
+                print(f"DISCARD: {key_to_discard}")
 
             self.cache_data[key] = item
             self.keys_in_cache.append(key)
