@@ -21,14 +21,13 @@ class LRUCache(BaseCaching):
         """
         LRU Algorithm
         """
-        if not key or not item:
-            return None
-        new_cache = {key: item}
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            lru_key = list(self.cache_data.keys())[0]
-            self.cache_data.pop(lru_key)
-            print(f"DISCARD: {lru_key}")
-        self.cache_data.update(new_cache)
+        if key and item:
+            new_cache = {key: item}
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                lru_key = list(self.cache_data.keys())[0]
+                self.cache_data.pop(lru_key)
+                print(f"DISCARD: {lru_key}")
+            self.cache_data.update(new_cache)
 
     def get(self, key):
         """
