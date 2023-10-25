@@ -26,8 +26,15 @@ class LFUCache(BaseCaching):
         """
         if key and item:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                min_key = min(self.usage_count, key=lambda k: self.usage_count[k])
-                min_keys = [k for k in self.usage_count if self.usage_count[k] == self.usage_count[min_key]]
+                min_key = min
+                (
+                    self.usage_count, key=lambda k: self.usage_count[k]
+                )
+                min_keys =
+                [
+                    k for k in self.usage_count
+                    if self.usage_count[k] == self.usage_count[min_key]
+                ]
                 min_key = min(min_keys, key=lambda k: self.usage_count[k])
                 print(f"DISCARD: {min_key}")
 
