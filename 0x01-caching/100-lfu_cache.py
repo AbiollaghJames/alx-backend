@@ -32,8 +32,8 @@ class LFUCache(BaseCaching):
                 )
                 min_keys =
                 [
-                    k for k in self.usage_count
-                    if self.usage_count[k] == self.usage_count[min_key]
+                    k for k in self.usage_count if self.usage_count[k] ==
+                    self.usage_count[min_key]
                 ]
                 min_key = min(min_keys, key=lambda k: self.usage_count[k])
                 print(f"DISCARD: {min_key}")
