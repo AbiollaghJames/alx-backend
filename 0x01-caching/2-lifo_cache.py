@@ -20,6 +20,9 @@ class LIFOCache(BaseCaching):
         """
         LIFO Algorithm
         """
+        if key is None or item is None:
+            return
+
         if key and item:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 if key in self.cache_data:
