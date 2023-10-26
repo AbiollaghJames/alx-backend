@@ -43,6 +43,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Function get page that returns a list
+        """
         assert isinstance(page, int)
         assert isinstance(page_size, int)
         assert page > 0
