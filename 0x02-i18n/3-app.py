@@ -22,7 +22,7 @@ app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
-@babel.localeselector
+#@babel.localeselector
 def get_locale() -> str:
     """
     Gets the locale for page.
