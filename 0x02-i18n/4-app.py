@@ -21,7 +21,7 @@ class Config:
 app.config.from_object(Config)
 
 
-@babel.localeselector
+#@babel.localeselector
 def get_locale() -> str:
     """determine the best match lang"""
     locale = request.args.get('locale')
