@@ -3,9 +3,9 @@
 Get locale from request
 """
 
+from typing import Union, Dict
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
-from typing import Union, Dict
 
 
 class Config:
@@ -44,7 +44,7 @@ def get_user() -> Union[Dict, None]:
 
 
 @app.before_request
-def before_request():
+def before_request() -> None:
     """
      executed before any function
      use get_user to find a user if any
