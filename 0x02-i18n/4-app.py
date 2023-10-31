@@ -22,7 +22,7 @@ app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
-@babel.localeselector
+#@babel.localeselector
 def get_locale() -> str:
     """
     Gets the locale for page.
@@ -33,7 +33,7 @@ def get_locale() -> str:
 @app.route("/")
 def index() -> str:
     """Home route"""
-    return render_template("3-index.html")
+    return render_template("4-index.html")
 
 
 if __name__ == "__main__":
