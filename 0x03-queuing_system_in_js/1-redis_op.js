@@ -9,11 +9,15 @@ client.on("error", (err) => {
 });
 
 function setNewSchool(schoolName, value) {
-    client.set(schoolName, value);
+    client.set(schoolName, value, (err) => {
+        if (err) console.error(err);
+    });
 };
 
 function displaySchoolValue(schoolName) {
-    client.get(schoolName);
+    client.get(schoolName, (err) => {
+        if (err) console.log(err);
+    });
 };
 
 setNewSchool('HolbertonSanFrancisco', '100');
