@@ -19,8 +19,8 @@ const value = {
 }
 
 for (const [k, v] of Object.entries(value)) {
-    client.hset(key, k, v, (err, data) => 
-    redis.print(`Data: ${data}`));
+    client.hset(key, k, v, (err, reply) => 
+    redis.print(`Reply: ${reply}`));
 }
 
-client.hgetall(key, (err, data) => console.log(data));
+client.hgetall(key, (err, reply) => console.log(reply));
