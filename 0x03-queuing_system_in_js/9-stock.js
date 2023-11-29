@@ -1,6 +1,6 @@
-const redis = require("redis");
-const express = require("express");
-const { promisify } = require("util");
+import redis from "redis";
+import express from "express";
+import { promisify } from "util";
 const getAsync = promisify(client.get).bind(client);
 
 const port = 1245;
